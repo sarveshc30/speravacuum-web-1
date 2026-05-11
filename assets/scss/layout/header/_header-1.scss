@@ -18,6 +18,9 @@
             @media #{$mobile}{
                 padding-inline-end: 15px;
             }
+            @media #{$lg}{
+                justify-content: space-between;
+            }
         }
         .rs-header-logo{
             position: relative;
@@ -34,7 +37,18 @@
                 width: 230px;
             }
             @media #{$mobile}{
-                width: 210px;
+                width: auto;
+                max-width: 120px;
+                justify-content: flex-start;
+                padding-inline-start: 10px;
+                background-color: transparent;
+            }
+            @media #{$xs}{
+                width: auto;
+                max-width: 150px;
+                justify-content: flex-start;
+                padding-inline-start: 10px;
+                background-color: transparent;
             }
             @media #{$lg}{
                 height: 90px;
@@ -89,6 +103,9 @@
             @media #{$lg}{
                 gap: 30px;
             }
+            @media #{$mobile}{
+                gap: 15px;
+            }
         }
         .rs-header-btn{
             @media #{$xl}{
@@ -100,6 +117,16 @@
                 }
             }
         }
+    }
+}
+
+.rs-sticky-header {
+    @media #{$mobile} {
+        padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+        padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+        width: auto !important;
+        left: 0 !important;
+        right: 0 !important;
     }
 }
 
