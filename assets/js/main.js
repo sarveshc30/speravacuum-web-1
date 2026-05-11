@@ -574,6 +574,34 @@ Sidebar Toggle
             meanScreenWidth: "1199",
             meanExpand: ['<i class="fa-regular fa-plus"></i>'],
         });
+        // Mobile hamburger → open offcanvas drawer
+        $(document).on('click', '.rs-header-one .rs-header-hamburger .bar-icon', function(e) {
+            e.preventDefault();
+            if ($(window).width() <= 991) {
+                $('.offcanvas-area').addClass('offcanvas-opened');
+                $('.body__overlay').addClass('active');
+            }
+        });
+        // Close offcanvas
+        $(document).on('click', '.offcanvas-close-icon, .body__overlay', function() {
+            $('.offcanvas-area').removeClass('offcanvas-opened');
+            $('.body__overlay').removeClass('active');
+        });
+        // Submenu accordion in drawer
+        $(document).on('click', '.rs-offcanvas-menu li.menu-item-has-children > a', function(e) {
+            if ($(window).width() <= 991) {
+                e.preventDefault();
+                var $sub = $(this).next('ul');
+                if ($sub.length) {
+                    $sub.slideToggle(250);
+                    $(this).closest('li').toggleClass('rs-open');
+                }
+            }
+        });
+        // Hide submenus initially in mobile offcanvas
+        if ($(window).width() <= 991) {
+            $('.rs-offcanvas-menu ul ul').hide();
+        }
 
         /*======================================
           One Page overlay close
