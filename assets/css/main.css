@@ -2951,6 +2951,24 @@ textarea:focus {
 .offcanvas-contact-icon svg path {
   fill: var(--rs-theme-orange);
 }
+@media only screen and (max-width: 767px) {
+  .offcanvas-contact ul li {
+    align-items: flex-start !important;
+    gap: 15px;
+  }
+  .offcanvas-contact-icon {
+    flex: 0 0 40px;
+    margin-top: 2px;
+  }
+  .offcanvas-contact-text {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .offcanvas-contact-text a {
+    display: block;
+    line-height: 1.45;
+  }
+}
 .offcanvas-btn .rs-btn {
   border: 1px solid var(--rs-border-secondary);
   padding: 0 12px;
@@ -3243,6 +3261,16 @@ textarea:focus {
   gap: 15px 35px;
   justify-content: center;
   flex-wrap: wrap;
+}
+@media only screen and (max-width: 767px) {
+  .rs-breadcrumb-one .rs-breadcrumb-menu,
+  .rs-breadcrumb-one .rs-breadcrumb-menu nav {
+    text-align: left;
+  }
+
+  .rs-breadcrumb-one .rs-breadcrumb-menu ul {
+    justify-content: flex-start;
+  }
 }
 .rs-breadcrumb-one .rs-breadcrumb-menu ul li {
   list-style: none;
@@ -10953,6 +10981,12 @@ html.lenis body {
 
   body.mean-container-active {
     padding-top: 56px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .offcanvas-area .mobile-menu {
+    display: none !important;
   }
 }
 
@@ -29924,14 +29958,25 @@ ol.applications-list li:not(:last-child) {
         }
 
         @media (max-width: 768px) {
+            .youtube-carousel-section {
+                width: 100vw;
+                margin-left: calc(50% - 50vw);
+                padding: 40px 0;
+            }
+
+            .carousel-container {
+                width: 100%;
+                max-width: none;
+            }
+
             .carousel-header h2 {
                 font-size: 2rem;
             }
 
             .video-card {
-                width: 280px;
-                min-width: 280px;
-                max-width: 280px;
+                width: 240px;
+                min-width: 240px;
+                max-width: 240px;
             }
             
             .play-button-overlay {
@@ -29951,15 +29996,16 @@ ol.applications-list li:not(:last-child) {
             }
             
             .carousel-wrapper {
-                margin: 0 55px;
+                margin: 0;
+                padding: 16px 48px;
             }
             
             .carousel-nav.prev {
-                left: -50px;
+                left: 8px;
             }
             
             .carousel-nav.next {
-                right: -50px;
+                right: 8px;
             }
             
             .modal-content {
@@ -29968,7 +30014,7 @@ ol.applications-list li:not(:last-child) {
         }
         @media (max-width: 480px) {
             .youtube-carousel-section {
-                padding: 40px 10px;
+                padding: 34px 0;
             }
             
             .carousel-header h2 {
@@ -29980,9 +30026,9 @@ ol.applications-list li:not(:last-child) {
             }
             
             .video-card {
-                width: 260px;
-                min-width: 260px;
-                max-width: 260px;
+                width: 210px;
+                min-width: 210px;
+                max-width: 210px;
             }
             
             .carousel-track {
@@ -29990,15 +30036,16 @@ ol.applications-list li:not(:last-child) {
             }
             
             .carousel-wrapper {
-                margin: 0 50px;
+                margin: 0;
+                padding: 14px 42px;
             }
             
             .carousel-nav.prev {
-                left: -45px;
+                left: 6px;
             }
             
             .carousel-nav.next {
-                right: -45px;
+                right: 6px;
             }
             
             .modal-close {
@@ -30007,13 +30054,13 @@ ol.applications-list li:not(:last-child) {
             }
         }        @media (max-width: 768px) {
             .carousel-wrapper {
-                padding: 20px 45px;
+                padding: 16px 48px;
             }
         }
 
         @media (max-width: 480px) {
             .carousel-wrapper {
-                padding: 20px 35px;
+                padding: 14px 42px;
             }
         }
 
@@ -30395,23 +30442,36 @@ ol.applications-list li:not(:last-child) {
 }
 
 @media (max-width: 767px) {
+    .rs-simple-world-map {
+        padding-bottom: 8px;
+    }
+
     .map-image-container {
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 964.422 / 512.112;
         border-radius: 8px;
+    }
+
+    .world-map-base {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
     
     .marker-pin {
-        width: 20px;
-        height: 28px;
+        width: 18px;
+        height: 18px;
     }
     
     .marker-pin::after {
-        width: 10px;
-        height: 10px;
+        width: 7px;
+        height: 7px;
     }
     
     .marker-pulse {
-        width: 20px;
-        height: 20px;
+        width: 18px;
+        height: 18px;
     }
     
     .marker-label {
@@ -30438,14 +30498,18 @@ ol.applications-list li:not(:last-child) {
 }
 
 @media (max-width: 575px) {
+    .map-image-container {
+        width: 100%;
+    }
+
     .marker-pin {
         width: 16px;
-        height: 24px;
+        height: 16px;
     }
     
     .marker-pin::after {
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
     }
     
     .marker-pulse {
@@ -30765,6 +30829,23 @@ ol.applications-list li:not(:last-child) {
         .rs-partners-logo:hover img {
             transform: scale(1.2);
             filter: grayscale(0%);
+        }
+
+        @media only screen and (max-width: 767px) {
+            .rs-partners-carousel-wrap {
+                margin-top: 24px;
+            }
+
+            .rs-partners-logo {
+                height: 110px;
+                padding: 10px;
+                border-radius: 8px;
+            }
+
+            .rs-partners-logo img {
+                width: 76px;
+                max-width: 100%;
+            }
         }
 
 

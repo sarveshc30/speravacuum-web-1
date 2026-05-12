@@ -469,7 +469,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <div class="mobile-menu">
+                    <div class="mobile-menu d-lg-none">
                         <div class="rs-offcanvas-menu mb-25">
                             <nav>
                             <ul class="multipage-menu">
@@ -2906,7 +2906,9 @@ function renderVideos() {
  * Update carousel position
  */
 function updateCarouselPosition(smooth = true) {
-    const cardWidth = 370; // 350px width + 20px gap
+    const firstCard = carouselTrack.querySelector('.video-card');
+    const trackGap = parseFloat(getComputedStyle(carouselTrack).gap) || 0;
+    const cardWidth = firstCard ? firstCard.getBoundingClientRect().width + trackGap : 370;
     const offset = -(currentIndex * cardWidth);
     
     if (smooth) {
@@ -3063,6 +3065,8 @@ async function initCarousel() {
     carouselWrapper.addEventListener('mouseleave', () => {
         isAutoScrolling = true;
     });
+
+    window.addEventListener('resize', () => updateCarouselPosition(false));
 }
 
 // Initialize when DOM is ready
