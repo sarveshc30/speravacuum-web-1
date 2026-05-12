@@ -30766,3 +30766,10 @@ ol.applications-list li:not(:last-child) {
             transform: scale(1.2);
             filter: grayscale(0%);
         }
+
+
+@media only screen and (max-width: 991px) {
+    body {
+        overflow-x: hidden;
+    }
+}
