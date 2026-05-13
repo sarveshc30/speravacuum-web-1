@@ -3236,6 +3236,32 @@ textarea:focus {
     background-position: center left;
   }
 }
+@media only screen and (max-width: 767px) {
+  .rs-breadcrumb-one {
+    min-height: calc(100vw * 450 / 1920);
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .rs-breadcrumb-one:has(.rs-breadcrumb-bg[data-background="assets/images/bg/about.png"]) {
+    min-height: calc(100vw * 732 / 1536);
+  }
+
+  .rs-breadcrumb-one:has(.rs-breadcrumb-bg[data-background="assets/images/bg/contact-us-banner.png"]) {
+    min-height: calc(100vw * 713 / 1536);
+  }
+
+  .rs-breadcrumb-one:has(.rs-breadcrumb-bg[data-background="assets/images/bg/products-banner.png"]) {
+    min-height: calc(100vw * 1024 / 1536);
+  }
+
+  .rs-breadcrumb-one .rs-breadcrumb-bg {
+    background-size: contain;
+    background-position: center center;
+  }
+}
 .rs-breadcrumb-one .rs-breadcrumb-title {
   font-size: 55px;
   margin-bottom: 15px;
